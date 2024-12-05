@@ -3,6 +3,10 @@
 // An console/alert message that welcomes the user to the game 
 
 
+console.log("--- Welcome to rock paper scissors ---");
+
+
+
 
 // Overview of rules
 // A message: "To make a move you can enter either rock, paper or scissors, i will make my move at the same time."
@@ -10,19 +14,42 @@
 // Another message: "Good luck!"
 
 
+console.log("To make a move you can enter either rock, paper or scissors, i will make my move at the same time.");
+
+console.log("rock beats scissors, scissor beat paper, paper beats rock, if we make the same move, we both score 0");
+
+console.log("Good luck!");
+
 
 // Prompt the user to enter their first move 
 // Store a variable with a message prompt to ask the user whether they could type the words rock/paper/scissors
 // let playerChoice = resultofinput
 
 
+let playerChoice = prompt("Please type either rock, paper or scissors.");
+
+console.log(playerChoice);
 
 // NPC makes their decision
 // An array of strings, with the 3 options, "rock", "paper", "scissors"
 // npcOptions = ["rock", "paper", "scissors"]
 
+
+
+
+
 // Create a function that makes the NPC choose one of the 3 options from the array at random and stores that into a variable and returns it
 // function npcRandom (npcOptions)
+
+function npcRandom() {
+    let npcOptions = ["rock", "paper", "scissors"];
+    let randomNumber = Math.floor(Math.random() * (3));
+    let npcChoice = npcOptions.at(randomNumber);
+    console.log(npcChoice)
+}
+npcRandom();
+
+
 
 // npcChoice = resultoffunction
 
