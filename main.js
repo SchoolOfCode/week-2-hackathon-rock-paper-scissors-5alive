@@ -36,10 +36,16 @@ console.log("%cGood luck!","font-style:italic;");
 // Store a variable with a message prompt to ask the user whether they could type the words rock/paper/scissors
 // let playerChoice = resultofinput
 
+let playerChoice = "";
 
-let playerChoice = prompt("Please type either rock, paper or scissors.");
+function firstPrompt() {
+playerChoice = prompt("Please type either rock, paper or scissors.");
+return playerChoice;
+}
 
-console.log(playerChoice);
+firstPrompt();
+
+//console.log(playerChoice);
 
 // NPC makes their decision
 // An array of strings, with the 3 options, "rock", "paper", "scissors"
@@ -51,7 +57,7 @@ function npcRandom() {
     let npcOptions = ["rock", "paper", "scissors"];
     let randomNumber = Math.floor(Math.random() * (3));
     let npcChoice = npcOptions.at(randomNumber);
-    console.log(npcChoice)
+    //console.log(npcChoice)
     return npcChoice;
 }
 
@@ -98,3 +104,23 @@ console.log(`Round 1: \n Player Score: ${playerScore} | I Scored: ${npcScore}`);
 // variable anotherGame (storing boolean yes/no)
 // Calling the function to take the player back to the "user first move" sequence
 // Use the console.clear command to clear the console before player starts again (maybe inside the play again function)
+
+
+function playAgain() {
+    anotherGame = prompt("Play again? Y or N"); 
+    if(anotherGame === "Y") {
+        firstPrompt();
+        npcRandom();
+        roundResult();
+        console.log(`%cYou chose: ${playerChoice} | %cI chose: ${npcChoice} | %cYou ${result}!`, "color:green;", "color:red;","color: yellow;" );
+        console.log(`Round 1: \n Player Score: ${playerScore} | I Scored: ${npcScore}`);
+        playAgain();
+        } 
+        else {
+        console.clear();
+        console.log("%c--- Thanks for playing! ---", "background: black; color:orange;");    
+
+        };
+};
+
+playAgain();
