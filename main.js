@@ -98,7 +98,7 @@ console.log(`%cYou chose: ${playerChoice} | %cI chose: ${npcChoice} | %cYou ${re
 // Update scores accordingly
 // Taken from the return values of the comparison function show the score of 1 for the winner, and 0 for the loser
 // Message that includes ${playerScore} and ${npcScore}
-console.log(`Round 1: \n Player Score: ${playerScore} | I Scored: ${npcScore}`);
+console.log(`Round : \n Player Score: ${playerScore} | I Scored: ${npcScore}`);
 
 // Play again? - prompt
 // variable anotherGame (storing boolean yes/no)
@@ -108,12 +108,12 @@ console.log(`Round 1: \n Player Score: ${playerScore} | I Scored: ${npcScore}`);
 
 function playAgain() {
     anotherGame = prompt("Play again? Y or N"); 
-    if(anotherGame === "Y") {
+    if(anotherGame.toUpperCase() === "Y") {
         firstPrompt();
         npcRandom();
         roundResult();
         console.log(`%cYou chose: ${playerChoice} | %cI chose: ${npcChoice} | %cYou ${result}!`, "color:green;", "color:red;","color: yellow;" );
-        console.log(`Round 1: \n Player Score: ${playerScore} | I Scored: ${npcScore}`);
+        console.log(`Round : \n Player Score: ${playerScore} | I Scored: ${npcScore}`);
         playAgain();
         } 
         else {
